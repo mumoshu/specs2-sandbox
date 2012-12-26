@@ -10,7 +10,7 @@ object ApplicationBuild extends Build {
   lazy val root = Project("root", base = file("."))
     .aggregate(specs2_9, specs2_11)
 
-  lazy val specs2_9 = Project("specs2 1.9", base = file ("1.9")).settings(
+  lazy val specs2_9 = Project("specs2_9", base = file ("1.9")).settings(
     organization := "com.github.mumoshu.specs2.specs2_9",
     version := "0.2.8",
     libraryDependencies ++= Seq(
@@ -18,11 +18,21 @@ object ApplicationBuild extends Build {
     )
   )
 
-  lazy val specs2_11 = Project("specs2 1.11", base = file ("1.11")).settings(
+  lazy val specs2_11 = Project("specs2_11", base = file ("1.11")).settings(
     organization := "com.github.mumoshu.specs2.specs2_11",
     version := "0.2.8",
     libraryDependencies ++= Seq(
       "org.specs2" %% "specs2" % "1.11" % "test"
+    )
+  )
+
+  lazy val specs2_12 = Project("specs2_12", base = file ("1.12")).settings(
+    organization := "com.github.mumoshu.specs2.specs2_12",
+    version := "0.2.8",
+    libraryDependencies ++= Seq(
+      "org.specs2" %% "specs2" % "1.12.3" % "test",
+      "org.mockito" % "mockito-all" % "1.9.0" % "test",
+      "org.hamcrest" % "hamcrest-all" % "1.1" % "test"
     )
   )
 }
